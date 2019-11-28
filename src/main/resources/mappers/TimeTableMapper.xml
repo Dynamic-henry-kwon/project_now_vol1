@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="TimeTableMapper">
+
+	<resultMap type="TimeTable" id="timeTableResult">
+		<result property="phoneNum" column="phone_num"/>
+		<result property="timeWakeUp" column="time_wake_up"/>
+		<result property="timeLeaveHome" column="time_leave_home"/>
+		<result property="timeStartWork" column="time_start_work"/>
+		<result property="timeLunchBreak" column="time_lunch_break"/>
+		<result property="timeStartAfterNoonWork" column="time_start_afternoon_work"/>	
+		<result property="timeQuttingWork" column="time_quitting_work"/>
+		<result property="timeComeBackHome" column="time_come_back_home"/>
+		<result property="timeGoToSleep" column="time_go_to_sleep"/>
+	</resultMap>
+	
+	
+	<insert id="createTtable">
+		insert into time_table (phone_num, time_wake_up, time_leave_home, time_start_work ,time_lunch_break,time_start_afternoon_work, time_quitting_work, time_come_back_home, time_go_to_sleep)
+		values( #{phoneNum}, #{timeWakeUp}, #{timeLeaveHome}, #{timeStartWork}, #{timeLunchBreak}, #{timeStartAfterNoonWork}, #{timeQuttingWork}, #{timeComeBackHome}, #{timeGoToSleep}
+		)
+	</insert>
+	<delete id="deleteAll">
+		delete from time_table
+	</delete>
+	<delete id="deleteTtable">
+		delete from time_table where PHONE_NUM = #{phoneNum}
+	</delete>
+	<select id="readTtable" resultMap="timeTableResult">
+		select * from time_table where PHONE_NUM = #{phoneNum}
+	</select>
+	<select id="readAll" resultMap="timeTableResult">
+		select * from time_table order by PHONE_NUM
+	</select>
+	
+	<update id="updateTtable" parameterType="User">
+		update time_table 
+		 <trim prefix="SET" suffixOverrides=",">
+		 	<if test="timeWakeUp != null">time_wake_up = #{timeWakeUp},</if>
+			<if test="timeLeaveHome != null">time_leave_home = #{timeLeaveHome},</if>
+			<if test="timeStartWork != null">time_start_work = #{timeStartWork},</if>
+			<if test="timeLunchBreak != null">time_lunch_break = #{timeLunchBreak},</if>
+			<if test="timeStartAfterNoonWork != null">time_start_afternoon_work = #{timeStartAfterNoonWork},</if>
+			<if test="timeQuttingWork != null">time_quitting_work = #{timeQuttingWork},</if>
+			<if test="timeComeBackHome != null">time_come_back_home = #{timeComeBackHome},</if>
+			<if test="timeGoToSleep != null">time_go_to_sleep = #{timeGoToSleep},</if>
+		 </trim>
+		 <if test="phoneNum != null">where PHONE_NUM = #{phoneNum}</if>
+	</update>
+
+	
+</mapper>	

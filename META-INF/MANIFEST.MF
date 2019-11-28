@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: project_now
+Bundle-SymbolicName: project_now
+Bundle-Version: 1.0.0.qualifier
+Export-Package: com.timeIsGold.appNow,
+ com.timeIsGold.appNow.Controller,
+ com.timeIsGold.appNow.Dao.test,
+ com.timeIsGold.appNow.Todo.Domain,
+ com.timeIsGold.appNow.User.Dao,
+ com.timeIsGold.appNow.User.Domain,
+ com.timeIsGold.appNow.User.Service

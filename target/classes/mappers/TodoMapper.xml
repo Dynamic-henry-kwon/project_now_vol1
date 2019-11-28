@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="TodoMapper">
+
+	<resultMap type="ToDo" id="toDoResult">
+		<result property="phoneNum" column="phone_num"/>
+		<result property="scheduleCode" column="schedule_code"/>
+		<result property="subScheduleCode" column="sub_schedule_code"/>
+		<result property="allocatiedPoint" column="allocated_point"/>
+		<result property="allocatedTime" column="allocated_time"/>
+		<result property="toDoCode" column="to_do_code"/>	
+		<result property="etcName" column="etc_name"/>
+
+		
+	</resultMap>
+	
+	
+	<insert id="createTodo">
+		insert into to_do (phone_num, schedule_code, sub_schedule_code, allocated_point, allocated_time, to_do_code, etc_name)
+		values( #{phoneNum}, #{scheduleCode}, #{subScheduleCode}, #{allocatiedPoint},  #{allocatedTime}, #{toDoCode}, #{etcName}
+		)
+	</insert>
+	
+	<delete id="deleteTodo" parameterType="ToDo">
+		delete from to_do 
+			<trim prefix ="WHERE" prefixOverrides = "AND | OR"  >
+				<if test="phoneNum != null">AND PHONE_NUM = #{phoneNum}  </if>
+				<if test="scheduleCode != null">AND schedule_code = #{scheduleCode} </if>
+				<if test="subScheduleCode != null">AND sub_schedule_code = #{subScheduleCode} </if>
+			</trim>
+	</delete>
+	
+	<select id="readTodoBysub" parameterType="ToDo" resultMap="toDoResult" >
+		select phone_num, schedule_code, sub_schedule_code, allocated_point, allocated_time,to_do_code, etc_name from to_do
+			<trim prefix ="WHERE" prefixOverrides = "AND | OR"  >
+				<if test="phoneNum != null">AND PHONE_NUM = #{phoneNum}  </if>
+				<if test="scheduleCode != null">AND schedule_code = #{scheduleCode} </if>
+				<if test="subScheduleCode != null">AND sub_schedule_code = #{subScheduleCode} </if>
+			</trim>
+	</select>
+	
+	<select id="readTodo" parameterType="ToDo" resultMap="toDoResult" >
+		select phone_num, schedule_code, sub_schedule_code, allocated_point, allocated_time,to_do_code, etc_name from to_do
+			<trim prefix ="WHERE" prefixOverrides = "AND | OR"  >
+				<if test="phoneNum != null">AND PHONE_NUM = #{phoneNum}  </if>
+				<if test="scheduleCode != null">AND schedule_code = #{scheduleCode} </if>
+			</trim>
+	</select>
+	
+	<update id="updateTodo" parameterType="ToDo">
+		update to_do 
+		 <trim prefix="SET" suffixOverrides=",">
+		 	<if test="allocatiedPoint != null">allocated_point = #{allocatiedPoint},</if>
+			<if test="allocatedTime != null">allocated_time = #{allocatedTime},</if>
+			<if test="toDoCode != null">to_do_code = #{toDoCode},</if>
+			<if test="etcName != null">etc_name = #{etcName},</if>
+		 </trim>
+		 <trim prefix ="WHERE" prefixOverrides = "AND | OR"  >
+				<if test="phoneNum != null">AND PHONE_NUM = #{phoneNum}  </if>
+				<if test="scheduleCode != null">AND schedule_code = #{scheduleCode} </if>
+				<if test="scheduleCode != null">AND sub_schedule_code = #{subScheduleCode} </if>
+		 </trim>
+	</update>
+	
+	<delete id="deleteAll">
+		delete from to_do
+	</delete>
+	
+	<select id="readAll" resultMap="toDoResult">
+		select phone_num, schedule_code, sub_schedule_code, allocated_point, allocated_time,to_do_code, etc_name from to_do
+	</select>
+	
+</mapper>	
