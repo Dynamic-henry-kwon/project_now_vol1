@@ -14,6 +14,8 @@
 <script src="https://naver.github.io/billboard.js/release/latest/dist/billboard.min.js"></script>
 <link rel="stylesheet" href="https://naver.github.io/billboard.js/release/latest/dist/billboard.min.css">
 </head>
+
+
 <body>
 	<div id="boxWrapp">
 		<div include-html="/common/header"></div>
