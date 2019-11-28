@@ -13,7 +13,6 @@
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://naver.github.io/billboard.js/release/latest/dist/billboard.min.js"></script>
 <link rel="stylesheet" href="https://naver.github.io/billboard.js/release/latest/dist/billboard.min.css">
-	
 </head>
 <body>
 	<div id="boxWrapp">
