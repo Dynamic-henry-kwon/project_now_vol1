@@ -42,7 +42,7 @@ public class UserLoginController {
 	@RequestMapping(value="/common/login", method = RequestMethod.GET)
 	public String getSpringLoginForm(Model model) {
 		System.out.println("here");
-		return "userLogin/secureLogin";
+		return "userLogin/securityLogin";
 	}
 	
 	@RequestMapping(value = "/common/login", method= RequestMethod.POST)
