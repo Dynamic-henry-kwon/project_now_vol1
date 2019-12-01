@@ -2,6 +2,7 @@
  * javascript source for user regist
  */
 
+
 var registService = (function() {
 	//회원가입
 	function registUser(data, callback, error){
@@ -33,8 +34,14 @@ var registService = (function() {
 			data: data,
 			dataType : 'json',
 			beforeSend: function(xhr) {
+				var token = $("meta[name='_csrf']").attr("content");
+				var header = $("meta[name='_csrf_header']").attr("content");
+				console.log(token);
+				console.log(header);
 				xhr.setRequestHeader("Accept", "application/json");
 				xhr.setRequestHeader("nav", nav);
+				xhr.setRequestHeader(header, token);
+
 				console.log(xhr);
 										},
 			success: function(result, status, xhr){

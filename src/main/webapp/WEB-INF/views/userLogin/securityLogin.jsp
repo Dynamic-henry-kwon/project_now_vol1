@@ -2,20 +2,22 @@
 	pageEncoding="UTF-8"%>
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html>
+<html >
 <head>
 <meta charset="UTF-8">
+<meta name="_csrf" content='${_csrf.token}'/>
+<meta name="_csrf_header" content="${_csrf.headerName}"/>
 <title>Insert title here</title>
-	<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-	<link rel="stylesheet" href="/resources/css/common.css" type="text/css">
-	<link rel="stylesheet" href="/resources/css/sub.css" type="text/css">
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<link rel="stylesheet" href="/resources/css/common.css" type="text/css">
+<link rel="stylesheet" href="/resources/css/sub.css" type="text/css">
 </head>
 <body>
 	<div id="boxWrapp">
 		<div include-html="/common/header"></div>
 		<section id="container">
 			<form id="frm" name="frm">
-				<input type="hidden" id="${_csrf.parameterName}" name="${_csrf.token}" value="">
+
 				<div class="login_area">
 					<div class="login_wrap">
 						<dl>
@@ -71,6 +73,7 @@
 			//로그인 후  home 화면으로 이동
 			$("#loginBtn").click(function(){
 				var json_param = $('#frm').serialize();
+				console.log(json_param);
 				nav = "/permit/home?status=index";
 				registService.selectNextPcs(json_param, fn_movePage, nav);
 				return false;

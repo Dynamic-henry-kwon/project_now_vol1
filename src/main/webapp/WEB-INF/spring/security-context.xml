@@ -8,7 +8,7 @@
 	<security:intercept-url pattern="/" access="permitAll"/>
 	<security:intercept-url pattern="/common/*" access="permitAll"/>
 	<security:intercept-url pattern="/permit/**" access="hasRole('ROLE_MEMBER')"/>
-	<security:csrf disabled="true"/>
+	<security:csrf disabled="false"/>
 	<security:form-login
 		login-page = "/common/login"
 		username-parameter="phoneNum"
