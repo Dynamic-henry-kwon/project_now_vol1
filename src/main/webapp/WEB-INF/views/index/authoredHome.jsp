@@ -60,7 +60,7 @@
 								</div>
 								<div class="member_info_btn">
 									<dl>
-										<dd class="todoBtn BtnRed" id="goToRegistTodo" >등록하기</dd>
+										<dd class="todoBtn BtnRed" id="goToRegistTodo" ></dd>
 										<dd class="todoBtn BtnGray_Dark" id="cancle">취소</dd>
 									</dl>
 								</div>							
@@ -74,8 +74,6 @@
 	<script src="/resources/js/includeHTML.js"></script>
 	<script src="/resources/js/toDoRegist.js"></script>
 	<script type="text/javascript">
-		//사용자 schedule을 받아와 만든 schedule객체
-		//var totalIndex = ['수면시간', '활동시간', "준비", "출근", "오전업무", "점심시간", "오후업무", "퇴근", "저녁시간", "미등록"];
 		
 		//서버로부터 내려온 	사용자 schedule에 할당된 시간을 담은 list	
 		var scheduleCodeObj = { 
@@ -157,7 +155,7 @@
 			// 차트에 미등록이 아닌 다른 요소를 클릭하면.
 			if(d.id != '미등록'){
 				if(depth == 2){
-					popUpTodoRegist( scheduleCodeObj[scheduleName][0],  scheduleCodeObj[scheduleName][1], "할일을 수정하시겠어요?");
+					popUpTodoRegist( scheduleCodeObj[scheduleName][0],  scheduleCodeObj[scheduleName][1], 1);
 				}else{
 					depth ++;
 					//미등록  toDo를 처리하기위해 미등록 toDo의 상위 scheduleName을 임시저장해 놓는다.
@@ -166,7 +164,8 @@
 						loadList = scheduleList;
 						
 					} else if (scheduleName == '수면시간') {
-						console.log("미구현");
+						alert("미구현");
+						depth --;
 						return null;
 					} else {
 						schedule = scheduleCodeObj[scheduleName][0];
@@ -177,7 +176,8 @@
 			} else {
 				// toDoRegist 화면으로 이동하는 팝업창 append
 				var scheduleCodeAndTime = scheduleCodeObj[scheduleName];
-				popUpTodoRegist(scheduleCodeAndTime[0], scheduleCodeAndTime[1], "할일을 등록하시겠어요?");
+				//등록
+				popUpTodoRegist(scheduleCodeAndTime[0], scheduleCodeAndTime[1], 0);
 				return null;
 			}
 			setDetailTime(d.id, d.value, loadList);
@@ -232,10 +232,18 @@
 	}
 	
 	//toDoRegistPopUp을 띄우는 함수
-	var popUpTodoRegist = function ( schedule, timeValue, alarmText ){
+	var popUpTodoRegist = function ( schedule, timeValue, bizNum ){
 		$('.black_bg').fadeIn();
 		$('#registTodoPop').fadeIn();
-		$('#alarm').html(alarmText)
+		if(bizNum == 0){
+			//등록
+			$('#alarm').html("할일을 등록하시겠어요?");
+			$('#goToRegistTodo').html("등록하기");
+		}else if (bizNum == 1){
+			$('#alarm').html("할일을 수정하시겠어요?");
+			$('#goToRegistTodo').html("수정하기");
+		}
+		
 		var params = {  "schedule" : schedule  , "value" : timeValue};
 		var form = toDoService.createForm('registInfo', "/permit/todoRegForm", "post", params);
 		document.body.appendChild(form);

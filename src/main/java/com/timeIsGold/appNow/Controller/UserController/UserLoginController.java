@@ -41,7 +41,8 @@ public class UserLoginController {
 
 	@RequestMapping(value="/common/login", method = RequestMethod.GET)
 	public String getSpringLoginForm(Model model) {
-		return "Login";
+		System.out.println("here");
+		return "userLogin/secureLogin";
 	}
 	
 	@RequestMapping(value = "/common/login", method= RequestMethod.POST)
@@ -83,7 +84,7 @@ public class UserLoginController {
 		model.addAttribute("userTodoList", userTodoList);
 		model.addAttribute("selector", status);
 		
-		return "authoredHome";
+		return "index/authoredHome";
 	}
 	
 

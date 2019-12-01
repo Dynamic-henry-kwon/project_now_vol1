@@ -38,7 +38,7 @@ public class UserRegistController {
 	 */
 	@RequestMapping(value = "/regist", method = RequestMethod.GET)
 	public String registGet(Model model) {
-		return "regist";
+		return "userRegist/regist";
 	}
 	
 	/**회원가입 처리 controller

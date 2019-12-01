@@ -1,4 +1,4 @@
-package com.timeIsGold.appNow.Controller.UserController;
+package com.timeIsGold.appNow.Controller.ScheduleController;
 
 import java.sql.Time;
 import java.time.LocalTime;
@@ -26,7 +26,7 @@ import com.timeIsGold.appNow.User.Service.UserService;
  */
 @Controller
 @RequestMapping("/permit")
-public class UserScheduleRegistController {
+public class ScheduleRegistController {
 	
 	@Autowired UserService userService;
 	@Autowired TimeTableService timeTableService;
@@ -35,7 +35,7 @@ public class UserScheduleRegistController {
 	public String enterScheduleRegist(Model model) {
 		Authentication authentication = (Authentication) SecurityContextHolder.getContext().getAuthentication();
 		User user = (User) authentication.getPrincipal();
-		return "TimeTableRegister";
+		return "schedule/scheduleRegist";
 	}
 	
 	 

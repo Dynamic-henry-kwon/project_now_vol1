@@ -20,8 +20,8 @@
 		always-use-default-target="false"
 		/>
 </security:http>
-<bean id= "signinSuccessHandler" class="com.timeIsGold.appNow.User.Service.Security.SigninSuccessHandler"></bean>
-<bean id= "signinFailureHandler" class="com.timeIsGold.appNow.User.Service.Security.SigninFailureHandler"></bean>
+<bean id= "signinSuccessHandler" class="com.timeIsGold.appNow.User.Service.Security.SigninSuccessHandler"/>
+<bean id= "signinFailureHandler" class="com.timeIsGold.appNow.User.Service.Security.SigninFailureHandler"/>
 
 <security:authentication-manager alias="authenticationManager">
 	<security:authentication-provider ref="customAuthenticationProvider">

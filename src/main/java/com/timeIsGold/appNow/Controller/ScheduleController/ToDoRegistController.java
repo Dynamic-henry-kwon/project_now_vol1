@@ -1,4 +1,4 @@
-package com.timeIsGold.appNow.Controller.UserController;
+package com.timeIsGold.appNow.Controller.ScheduleController;
 
 import java.util.HashMap;
 import java.util.List;
@@ -29,7 +29,7 @@ import com.timeIsGold.appNow.User.Domain.User;
  */
 @Controller
 @RequestMapping("/permit")
-public class UserToDoRegistController {
+public class ToDoRegistController {
 	
 	@Autowired TodoService todoService;
 	
@@ -50,7 +50,7 @@ public class UserToDoRegistController {
 		model.addAttribute("todoListbySchedule", todoListbySchedule);
 		model.addAttribute("todoListSize", todoListbySchedule.size());
 		
-		return "todoRegist";
+		return "todo/todoRegist";
 	}
 	
 	@RequestMapping(value ="/registTodo" , method = RequestMethod.POST)
