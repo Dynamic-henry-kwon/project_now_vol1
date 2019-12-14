@@ -10,6 +10,13 @@ var registService = (function() {
 			type:'post',
 			url : '/common/regist',
 			data : data,
+			dataType : 'json',
+			beforeSend: function(xhr){
+				var token = $("meta[name='_csrf']").attr("content");
+				var header = $("meta[name='_csrf_header']").attr("content");
+				xhr.setRequestHeader("Accept", "application/json");
+				xhr.setRequestHeader(header, token);
+			},
 			success : function (result, status, xhr) {
 				if(callback){
 					callback(result);
@@ -26,7 +33,7 @@ var registService = (function() {
 	
 	
 	// 이동 페이지 선택
-	function  selectNextPcs(data, callback, nav, error){
+	function  selectNextPcsAfterLogin(data, callback, nav, error){
 		console.log(nav);
 		$.ajax({
 			type:'post',
@@ -36,8 +43,6 @@ var registService = (function() {
 			beforeSend: function(xhr) {
 				var token = $("meta[name='_csrf']").attr("content");
 				var header = $("meta[name='_csrf_header']").attr("content");
-				console.log(token);
-				console.log(header);
 				xhr.setRequestHeader("Accept", "application/json");
 				xhr.setRequestHeader("nav", nav);
 				xhr.setRequestHeader(header, token);
@@ -45,7 +50,7 @@ var registService = (function() {
 				console.log(xhr);
 										},
 			success: function(result, status, xhr){
-				
+				alert(JSON.stringify(result));
 				if(callback){
 					callback(result);
 				}
@@ -63,7 +68,7 @@ var registService = (function() {
 
 	return {
 		registUser : registUser,
-		selectNextPcs : selectNextPcs
+		selectNextPcsAfterLogin : selectNextPcsAfterLogin
 
 	};
 	

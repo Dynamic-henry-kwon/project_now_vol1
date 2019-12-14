@@ -5,6 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="_csrf" content='${_csrf.token}'/>
+<meta name="_csrf_header" content="${_csrf.headerName}"/>
 <title>Insert title here</title>
 	<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
 	<link rel="stylesheet" href="/resources/css/common.css" type="text/css">
@@ -15,7 +17,6 @@
 		<div include-html="/common/header"></div>
 		<section id="container">
 			<form id="frm" name="frm" action method="post">
-				<input type="hidden" id="${_csrf.parameterName}" name="${_csrf.token}" value="">
 				<div class="login_area member_form">
 					<div class="login_wrap">
 						<dl>
@@ -158,8 +159,13 @@
 			
 			//가입후 이동할 페이지 선택
 			$(".memberBtn").click(function(){
-				nav = this.id;
-				registService.selectNextPcs(user, fn_movePage, nav);
+				var nav;
+				if(this.id == "registTime"){
+					nav = "/permit/regist/time";
+				}else if(this.id == "home"){
+					nav = "/permit/home?status=index";
+				}
+				registService.selectNextPcsAfterLogin(user, fn_movePage, nav);
 				return false;
 			});// end memberBtn click
 			
@@ -170,11 +176,7 @@
 				var error = body.response.error;
 				if(error) console.log("로그인 실패");
 				if(error == false){
-					if (body.response.nav === "registTime"){
-						location.replace("/permit/regist/time");
-					} else {
-						location.replace("/permit/home");
-					}
+					location.replace(body.response.nav);
 				}
 		}//end fn_movePage
 		

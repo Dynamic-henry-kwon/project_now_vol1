@@ -19,6 +19,10 @@
 		default-target-url="/permit/home"
 		always-use-default-target="false"
 		/>
+	<security:logout
+		logout-url="/signout_ok"
+		logout-success-url="/common/login"
+	/>	
 </security:http>
 <bean id= "signinSuccessHandler" class="com.timeIsGold.appNow.User.Service.Security.SigninSuccessHandler"/>
 <bean id= "signinFailureHandler" class="com.timeIsGold.appNow.User.Service.Security.SigninFailureHandler"/>

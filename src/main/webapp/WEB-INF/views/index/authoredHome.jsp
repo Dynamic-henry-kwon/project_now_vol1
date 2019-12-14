@@ -22,9 +22,6 @@
 	<div id="boxWrapp">
 		<div include-html="/common/header"></div>
 		<section id="container">
-			<form id="frm" name="frm" action method="post">
-				<input type="hidden" id="${_csrf.parameterName}"
-					name="${_csrf.token}" value="">
 				<div class="login_area member_form">
 					<div class="login_wrap">
 						<dl>
@@ -44,7 +41,6 @@
 					<!-- //login_wrap -->
 				</div>
 				<!-- //login_area -->
-			</form>
 		</section>
 			<div id="boxWapper">
 				<div class="black_bg" style="diplay: block;">
@@ -282,7 +278,33 @@
 				$('.black_bg').fadeOut();
 				$('#registTodoPop').fadeOut();
 			}
+			
+			
 		});
+	</script>
+	
+	<script type="text/javascript">
+	$(document).ready(function(){
+
+		var sendSignOutPost = function(){
+			var form = document.createElement('form');
+			form.setAttribute("method", "post");
+/* 			form.setAttribute("name", "${_csrf.parameterName}");
+			form.setAttribute("value", "${_csrf.token}"); */
+			form.action = "/signout_ok"
+			var hiddenField = document.createElement("input");
+		       hiddenField.setAttribute("type", "hidden");
+		       hiddenField.setAttribute("name", "${_csrf.parameterName}");
+		       hiddenField.setAttribute("value", "${_csrf.token}");
+		       form.appendChild(hiddenField);
+				document.body.appendChild(form);
+			form.submit();
+		}
+		
+		$('#testBtn').click(function(){
+			sendSignOutPost();
+		})
+	});
 	</script>
 </body>
 </html>

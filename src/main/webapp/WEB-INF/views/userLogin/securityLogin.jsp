@@ -75,7 +75,7 @@
 				var json_param = $('#frm').serialize();
 				console.log(json_param);
 				nav = "/permit/home?status=index";
-				registService.selectNextPcs(json_param, fn_movePage, nav);
+				registService.selectNextPcsAfterLogin(json_param, fn_movePage, nav);
 				return false;
 			});// end memberBtn click
 			//로그인 후 지정된 화면 nav로 이동

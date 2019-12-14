@@ -7,8 +7,7 @@
 			</h1>
 			<div class="gnb">
 				<ul id="nav">
-					<li><a href="/"
-						onclick="window.open(this.href, '', ''); return false;">일번탭</a></li>
+					<li> <a id="testBtn">로그아웃</a></li>
 					<li><a href="/"
 						onclick="window.open(this.href, '', ''); return false;">이번탭</a></li>
 					<li><a href="/"
