@@ -22,8 +22,8 @@
 		<section id="container">
 			<form id="frm" name="frm" action method="post">
 				<input type="hidden" id="${_csrf.parameterName}" name="${_csrf.token}" value="">
-				<div class="login_area member_form">
-					<div class="login_wrap">
+				<div class="common_area member_form">
+					<div class="common_wrap">
 						<dl>
 							<!-- contoller에서 내려오는 schedule명과 총 할당시간 -->
 							<dt id="formTitle"></dt>
@@ -66,14 +66,13 @@
 							</dl>
 						</div>
 					</div>
-					<!-- //login_wrap -->
+					<!-- //common_wrap -->
 				</div>
-				<!-- //login_area -->
+				<!-- //common_area -->
 			</form>
 		</section>
 
 		<!-- //container -->
-		<div include-html="/common/footer"></div>
 	</div>	
 	<script src="/resources/js/includeHTML.js"></script>
 	<script src="/resources/js/toDoRegist.js"></script>

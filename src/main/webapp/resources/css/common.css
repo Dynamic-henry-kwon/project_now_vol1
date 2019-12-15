@@ -134,14 +134,6 @@ input[type="text"], input[type="password"], input[type="email"], input[type="sea
 
 
 
-.login_area p {
-    line-height: 25px;
-    color: #868686;
-    padding-bottom: 0px;
-    position: relative;
-    text-align: left;
-    margin-top: 5px;
-}
 
 #footer {
     width: 100%;
