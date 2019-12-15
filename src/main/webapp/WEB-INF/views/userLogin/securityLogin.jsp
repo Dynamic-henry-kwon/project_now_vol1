@@ -14,19 +14,17 @@
 </head>
 <body>
 	<div id="boxWrapp">
-		<div include-html="/common/header"></div>
 		<section id="container">
 			<form id="frm" name="frm">
-
-				<div class="login_area">
-					<div class="login_wrap">
+				<div class="common_area">
+					<div class="common_wrap">
 						<dl>
-							<dt>스프링 로그인</dt>
+							<dt> <a href="/">시간은 금, 지금</a></dt>
 							<dd>시간관리앱 지금으로 규칙적인 생활</dd>
 						</dl>
 						<ul>
 							<li>
-								<label for="login" class="sr-only">휴대전화</label>
+								<label for="phoneNum" class="sr-only">휴대전화</label>
 								<input id="phoneNum" name="phoneNum" type="text" class="id placeholder" style="ime-mode:disabled;"
 								placeholder="휴대전화번호(-없이)">
 							</li>
@@ -39,7 +37,7 @@
 							<input type="checkbox" name="save_id" id="save_id" value="1">
 							<label for="save_id">휴대전화번호 저장</label>
 						</p>
-						<div class="loginBtn">
+						<div class="login_btn">
 							<a id="loginBtn" class="BtnRed">로그인</a>
 						</div>
 						<div class="id_pw">
@@ -49,21 +47,19 @@
 							<a href="/">비밀번호 찾기</a>
 						</div>
 					</div>
-					<div class="memberjoin">
-							<div class="gojoin">
-								아직 회원이 아니신가요?
-								<a href="/common/regist">회원가입</a>	
-							</div>
+					<div class="member_join">
+						<div class="go_join">
+							아직 회원이 아니신가요?
+							<a href="/common/regist">회원가입</a>	
 						</div>
-					<!-- //login_wrap -->
+					</div>
+					<!-- //_wrap -->
 				</div>
-				<!-- //login_area -->
+				<!-- //_area -->
 			</form>
 		</section>
 		<!-- //container -->
-		<div include-html="/common/footer"></div>
 	</div>	
-	<script src="/resources/js/includeHTML.js"></script>
 	<script src="/resources/js/userRegist.js"></script>
 	<script type="text/javascript">
 		var phoneNum;

@@ -5,6 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="_csrf" content='${_csrf.token}'/>
+<meta name="_csrf_header" content="${_csrf.headerName}"/>
 <title>Insert title here</title>
 <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
 <link rel="stylesheet" href="/resources/css/common.css" type="text/css">
@@ -18,9 +20,8 @@
 		<div include-html="/common/header"></div>
 		<section id="container">
 			<form id="frm" name="frm" action method="post">
-				<input type="hidden" id="csrf_tn" name="csrf_tn" value="">
-				<div class="login_area member_form">
-					<div class="login_wrap">
+				<div class="common_area member_form">
+					<div class="common_wrap">
 						<dl>
 							<dt>수면 패턴 등록</dt>
 							<dd>회원님의 수면 패턴을 등록해주세요.</dd>
@@ -49,13 +50,12 @@
 							</dl>
 						</div>
 					</div>
-					<!-- //login_wrap -->
+					<!-- //common_wrap -->
 				</div>
-				<!-- //login_area -->
+				<!-- //common_area -->
 			</form>
 		</section>
 		<!-- //container -->
-		<div include-html="/common/footer"></div>
 	</div>
 	<script src="/resources/js/userRegist.js"></script>
 	<script src="/resources/js/timeTableTemplate.js"></script>
@@ -209,7 +209,7 @@
 									json_timeTable, function(data) {
 										if (data.result) {
 											alert("일정이 등록되었습니다.");
-											location.replace("/permit/home");
+											location.replace("/permit/home?status=index");
 										} else {
 											alert("일정등록에 실패하였습니다.");
 										}

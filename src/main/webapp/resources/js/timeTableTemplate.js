@@ -67,6 +67,12 @@ var registTimeTableService = (function(){
 			url : '/permit/regist/time/regist',
 			data: data,
 			contentType : "application/json; charset=utf-8",
+			beforeSend: function(xhr){
+				var token = $("meta[name='_csrf']").attr("content");
+				var header = $("meta[name='_csrf_header']").attr("content");
+				xhr.setRequestHeader("Accept", "application/json");
+				xhr.setRequestHeader(header, token);
+			},
 			success: function(result, status, xhr){
 				if(callback){
 					callback(result)
@@ -82,7 +88,7 @@ var registTimeTableService = (function(){
 	}
 	
 	function makeForm(title, subOne, subTwo, subThree,leftBtnId, rigthBtnId){
-		return "\<div class=\"login_wrap\">\n\
+		return "\<div class=\"common_wrap\">\n\
 					<dl>\n\
 						<dt>" + title +" 등록</dt>\n\
 							<dd>회원님의 " + title +"을 등록해주세요.</dd>\n\

@@ -17,8 +17,8 @@
 		<div include-html="/common/header"></div>
 		<section id="container">
 			<form id="frm" name="frm" action method="post">
-				<div class="login_area member_form">
-					<div class="login_wrap">
+				<div class="common_area member_form">
+					<div class="common_wrap">
 						<dl>
 							<dt>회원가입</dt>
 							<dd>시간관리앱 지금에 오신 것을 환영합니다.</dd>
@@ -89,7 +89,7 @@
 						<div class="id_pw">
 							<dl>
 								<dd>
-									<a href="/" class="BtnGray_Dark">취소</a>
+									<a href="/common/login" class="BtnGray_Dark">취소</a>
 								</dd>
 								<dd>
 									<a id="regBtn" class="BtnRed">회원가입</a>
@@ -97,9 +97,9 @@
 							</dl>
 						</div>
 					</div>
-					<!-- //login_wrap -->
+					<!-- //common_wrap -->
 				</div>
-				<!-- //login_area -->
+				<!-- //common_area -->
 			</form>
 		</section>
 		<div id="boxWapper">
@@ -126,7 +126,6 @@
 			</div>
 		</div>
 		<!-- //container -->
-		<div include-html="/common/footer"></div>
 	</div>	
 	<script src="/resources/js/includeHTML.js"></script>
 	<script src="/resources/js/userRegist.js"></script>

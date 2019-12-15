@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-.login_area {
+.common_area {
     width: 500px;
     background: #fff;
     border: 1px #e1e1e1 solid;
@@ -9,33 +9,40 @@
     border-radius: 7px;
 }
 
-.login_area .login_wrap {
+.common_area .common_wrap {
     padding: 50px 30px 30px;
 }
 
-.login_area dl dt {
+.common_area dl dt {
     font-size: 35px;
     color: #bc162c;
     font-weight: 700;
     padding-bottom: 20px;
 }
 
-.login_area dl dd {
+.common_area dl dt a{
+    font-size: 35px;
+    color: #bc162c;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+.common_area dl dd {
     font-size: 15px;
     color: #868686;
 }
 
-.login_area ul {
+.common_area ul {
     margin-top: 20px;
     width: 100%;
 }
 
-.login_area ul li {
+.common_area ul li {
     text-align: left;
 }
 
 
-.login_area ul li input {
+.common_area ul li input {
     width: 100%;
     height: 52px;
     border: 1px #e1e1e1 solid;
@@ -44,7 +51,7 @@
     color: #898989;
 }
 
-.login_area ul li select {
+.common_area ul li select {
     width: 100%;
     height: 52px;
     border: 1px #e1e1e1 solid;
@@ -53,13 +60,13 @@
     color: #898989;
 }
 
-.login_area p input {
+.common_area p input {
     margin-right: 10px;
     margin-top: 5px;
     display: inline-block;
 }
 
-.login_area p label:after {
+.common_area p label:after {
     <!--content: ''-->
     top: 4px;
     left: 1px;
@@ -70,7 +77,7 @@
     z-index: 1;
 }
 
-.login_area p .policy {
+.common_area p .policy {
     color: #bc162c;
     display: inline-block;
     padding-left: 10px;
@@ -81,49 +88,49 @@
     font-size: 13px;
 }
 
-.login_area .id_pw dl {
+.common_area .id_pw dl {
     width: 100%;
     margin-top: 30px;
 }
 
 
 
-.login_area .id_pw dl dd {
+.common_area .id_pw dl dd {
     float: left;
     height: 52px;
     width: 50%;
     padding-right: 5px;
 }
 
-.login_area	ul li p {
+.common_area	ul li p {
     font-size: 15px;
     color: #868686;
 }
 
-.login_area ul .id {
+.common_area ul .id {
     background: #f2f2f2 url(../img/common/ico_login_mail.png) no-repeat 20px center;
     background-size: 15px;
 }
 
-.login_area .id_pw dl:after {
+.common_area .id_pw dl:after {
     content: '';
     clear: both;
     display: block;
 }
 
-.login_area ul .pw  {
+.common_area ul .pw  {
     background: #f2f2f2 url(../img/common/ico_login_password.png) no-repeat 20px center;
     border-top: 0px;
     background-size: 13px;
 }
 
-.login_area p input {
+.common_area p input {
     margin-right: 10px;
     margin-top: 5px;
     display: inline-block;
 }
 
-.login_area p {
+.common_area p {
     line-height: 25px;
     color: #868686;
     padding-bottom: 0px;
@@ -133,10 +140,18 @@
 }
 
 
-.login_area p input:checked + label:after {
+.common_area p input:checked + label:after {
     background: url(../img/common/onchek_bg.gif) no-repeat 0 0;
 }
 
+.common_area p {
+    line-height: 25px;
+    color: #868686;
+    padding-bottom: 0px;
+    position: relative;
+    text-align: left;
+    margin-top: 5px;
+}
 
 .member_info_btn dl{
 	width: 100%;
@@ -275,7 +290,7 @@ a.BtnGray_Dark, .BtnGray_Dark {
     cursor: pointer;
 }
 
-.login_area .loginBtn a {
+.common_area .loginBtn a {
     display: block;
     line-height: 52px;
     margin-top: 0px;
@@ -305,17 +320,17 @@ a.BtnGray_Dark, .BtnGray_Dark {
 }
 
 
-.memberjoin {
+.member_join {
     padding: 30px 50px;
     background: #f5f5f5;
     text-align: center;
 }
-.memberjoin .gojoin {
+.member_join .go_join {
     color: #868686;
 }
 
 
-.memberjoin .gojoin a {
+.member_join .go_join a {
     display: block;
     max-width: 180px;
     margin: 10px auto 0;

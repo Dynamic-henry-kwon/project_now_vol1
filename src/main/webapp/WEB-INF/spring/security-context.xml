@@ -21,7 +21,7 @@
 		/>
 	<security:logout
 		logout-url="/signout_ok"
-		logout-success-url="/common/login"
+		logout-success-url="/"
 	/>	
 </security:http>
 <bean id= "signinSuccessHandler" class="com.timeIsGold.appNow.User.Service.Security.SigninSuccessHandler"/>
