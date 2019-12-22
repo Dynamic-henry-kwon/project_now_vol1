@@ -23,10 +23,10 @@ public class SecurityUserLevelUpgradePolicy implements UserLevelUpgradePolicy {
 	public boolean canUpgradeLevel(User user) {
 		Level currentLevel = user.getLevel();
 		switch (currentLevel) {
-			case STONE: return (user.getCumulativeCount() >= MIN_CUMULATIVE_COUNT_FOR_BRONZE);
-			case BRONZE: return (user.getCumulativeCount() >= MIN_CUMULATIVE_COUNT_FOR_SILVER);
-			case SILVER: return (user.getCumulativeCount() >= MIN_CUMULATIVE_COUNT_FOR_GOLD);
-			case GOLD: return (user.getCumulativeCount() >= MIN_CUMULATIVE_COUNT_FOR_DIAMOND);
+			case STONE: return (user.getLoginCount() >= MIN_CUMULATIVE_COUNT_FOR_BRONZE);
+			case BRONZE: return (user.getLoginCount() >= MIN_CUMULATIVE_COUNT_FOR_SILVER);
+			case SILVER: return (user.getLoginCount() >= MIN_CUMULATIVE_COUNT_FOR_GOLD);
+			case GOLD: return (user.getLoginCount() >= MIN_CUMULATIVE_COUNT_FOR_DIAMOND);
 			case DIAMOND: return false;
 			default : throw new IllegalArgumentException("Unknown Level: " + currentLevel );
 		}

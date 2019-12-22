@@ -6,9 +6,9 @@
 <mapper namespace="UserMapper">
 
 	<insert id="createUser">
-		insert into user (PHONE_NUM, PASSWORD, NAME, NICKNAME ,GENDER, DETAIL_OCCUPATION_CODE, POINT_JG, CUMULATIVE_COUNT, LEVEL,
+		insert into user (PHONE_NUM, PASSWORD, NAME, NICKNAME ,GENDER, DETAIL_OCCUPATION_CODE, POINT_JG, LOGIN_COUNT, LEVEL,
 		USER_SERVICE_AGRMENT, USER_INFO_AGRMENT )
-		values( #{phoneNum}, #{password}, #{name}, #{nickname}, #{gender}, #{detailOccupationCode}, #{pointJG}, #{cumulativeCount},
+		values( #{phoneNum}, #{password}, #{name}, #{nickname}, #{gender}, #{detailOccupationCode}, #{pointJG}, #{loginCount},
 		#{level, typeHandler=com.timeIsGold.appNow.User.Service.EnumTypeHandler}, #{userServiceAgrment}, #{userInfoAgrment})
 	</insert>
 	<delete id="deleteAll">
@@ -33,7 +33,7 @@
 		 	<if test="detailOccupationCode != null">DETAIL_OCCUPATION_CODE = #{detailOccupationCode},</if>
 		 	<if test="pointJG != 0">
 		 		POINT_JG = POINT_JG + #{pointJG},
-		 		CUMULATIVE_COUNT = CUMULATIVE_COUNT + 1,
+		 		LOGIN_COUNT = LOGIN_COUNT + 1,
 		 	</if>
 		 	<if test="level != null">LEVEL = #{level, typeHandler=com.timeIsGold.appNow.User.Service.EnumTypeHandler},</if> 
 		 </trim>
@@ -48,7 +48,7 @@
 		<result property="gender" column="gender"/>
 		<result property="detailOccupationCode" column="detail_occupation_code"/>
 		<result property="pointJG" column="point_jg"/>
-		<result property="cumulativeCount" column="cumulative_count"/>
+		<result property="loginCount" column="login_count"/>
 		<result property="level" column = "level" typeHandler="com.timeIsGold.appNow.User.Service.EnumTypeHandler"/>
 		<result property="userServiceAgrment" column="user_service_agrment"/>
 		<result property="userInfoAgrment" column="user_info_service"/>

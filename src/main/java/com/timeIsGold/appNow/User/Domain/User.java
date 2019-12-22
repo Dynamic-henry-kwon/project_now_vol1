@@ -7,7 +7,6 @@ import java.util.List;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Component;
 
 import lombok.Data;
 @Data
@@ -19,38 +18,38 @@ public class User implements UserDetails{
 	private String gender;
 	private String detailOccupationCode;
 	private	int pointJG = 0;
-	private int cumulativeCount = 0;
+	private int loginCount = 0;
 	private Level level;
-	private String userServiceAgrment = "0";
-	private String userInfoAgrment = "0";
+	private String userServiceAgrment = "1";
+	private String userInfoAgrment = "1";
 	
 	
 	public User() {
 	}
 	
 	public User(String phoneNum, String password, String name, String nickname, String gender,
-			String detailOccupationCode, int cumulativeCount , String userServiceAgrment, String userInfoAgrment ) {
+			String detailOccupationCode, int loginCount , String userServiceAgrment, String userInfoAgrment ) {
 		this.phoneNum = phoneNum;
 		this.password = password;
 		this.name = name;
 		this.nickname = nickname;
 		this.gender = gender;
 		this.detailOccupationCode = detailOccupationCode;
-		this.cumulativeCount = cumulativeCount;
+		this.loginCount = loginCount;
 		this.userServiceAgrment = userServiceAgrment;
 		this.userInfoAgrment = userInfoAgrment;
 	}
 	
 	
 	public User(String phoneNum, String password, String name, String nickname, String gender,
-			String detailOccupationCode, int cumulativeCount, Level level , String userServiceAgrment, String userInfoAgrment) {
+			String detailOccupationCode, int loginCount, Level level , String userServiceAgrment, String userInfoAgrment) {
 		this.phoneNum = phoneNum;
 		this.password = password;
 		this.name = name;
 		this.nickname = nickname;
 		this.gender = gender;
 		this.detailOccupationCode = detailOccupationCode;
-		this.cumulativeCount = cumulativeCount;
+		this.loginCount = loginCount;
 		this.level = level;
 		this.userServiceAgrment = userServiceAgrment;
 		this.userInfoAgrment = userInfoAgrment;

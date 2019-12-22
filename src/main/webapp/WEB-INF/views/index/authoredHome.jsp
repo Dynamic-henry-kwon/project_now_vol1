@@ -13,7 +13,6 @@
 	src="https://naver.github.io/billboard.js/release/latest/dist/billboard.min.js"></script>
 <link rel="stylesheet"
 	href="https://naver.github.io/billboard.js/release/latest/dist/billboard.min.css">
-
 </head>
 <body>
 	<div id="boxWrapp">
@@ -25,9 +24,17 @@
 						<dd>${user.phoneNum}님의하루를분석한결과입니다.</dd>
 					</dl>
 					<ul>
-						<li>
-							<div class="timeTable" id="analyzeChart"></div>
-						</li>
+						<c:set value="${userTodoList}" var="userTodoList"/>
+						<c:choose>
+							<c:when test= "${userSchedule eq null}" >
+								<li>등록된 일정이 없습니다.</li>
+							</c:when>
+							<c:otherwise>
+								<li>
+									<div class="timeTable" id="analyzeChart"></div>
+								</li>
+							</c:otherwise>
+						</c:choose>
 					</ul>
 					<div class="id_pw"></div>
 				</div>
@@ -71,7 +78,9 @@
 	<script src="/resources/js/toDoRegist.js"></script>
 	<!-- 정적 event -->
 	<script type="text/javascript">
+		console.log()
 		//서버로부터 내려온 	사용자 schedule에 할당된 시간을 담은 list	
+		if('${userSchedule}' != ''){
 		var scheduleCodeObj = {
 			"수면시간" : [ "0", '${userSchedule.sleepTime}' ],
 			"활동시간" : [ "1", '${userSchedule.awakeTime}' ],
@@ -269,6 +278,7 @@
 			}
 			setDetailTime(id, value, list, beforeBtn);
 		};
+	}	
 	</script>
 	<!-- page 로딩 후 동적 event -->
 	<script type="text/javascript">
@@ -318,6 +328,7 @@
 				sendSignOutPost();
 			})
 		});
+		
 	</script>
 </body>
 </html>

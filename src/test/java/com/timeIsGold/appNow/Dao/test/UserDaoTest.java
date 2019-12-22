@@ -106,7 +106,7 @@ public class UserDaoTest {
 		User updatedUser = mybatisUserDao.readUser(user.getPhoneNum());
 		
 		assertThat(updatedUser.getPointJG(), is(nowUser.getPointJG() + addPoint));
-		assertThat(updatedUser.getCumulativeCount(), is(1));
+		assertThat(updatedUser.getLoginCount(), is(1));
 		
 	}
 	
@@ -149,7 +149,7 @@ public class UserDaoTest {
 		assertThat(user1.getGender(), is(user2.getGender()));
 		assertThat(user1.getDetailOccupationCode(), is(user2.getDetailOccupationCode()));
 		assertThat(user1.getPointJG(), is(user2.getPointJG()));
-		assertThat(user1.getCumulativeCount(), is(user2.getCumulativeCount()));
+		assertThat(user1.getLoginCount(), is(user2.getLoginCount()));
 		assertThat(user1.getLevel(), is(user2.getLevel()));
 	
 	}
