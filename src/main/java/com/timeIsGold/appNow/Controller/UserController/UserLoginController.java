@@ -57,6 +57,7 @@ public class UserLoginController {
 		UserSchedule userSchedule = tService.getTimePlan(user.getPhoneNum());
 		ToDo userTodo = new ToDo(user.getPhoneNum(), null); 
 		List<ToDo> userTodoList = todoService.readTodo(userTodo);
+		System.out.println("userSchedule = " + userSchedule);
 		model.addAttribute("user", user);
 		model.addAttribute("userSchedule", userSchedule);
 		model.addAttribute("serverTime", formattedDate);

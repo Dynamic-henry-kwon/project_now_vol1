@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -45,8 +44,7 @@
 									placeholder="비밀번호 확인">
 								</span>
 							</li>
-							
-							<li>
+<!-- 							<li>
 								<select name="detailOccupationCode" class="require placeholder">
 									<option value="">&nbsp;&nbsp;&nbsp;직군을 선택해주세요.</option>
 									<option value="1">&nbsp;&nbsp;&nbsp;경영.사무</option>
@@ -63,7 +61,7 @@
 									<option value="12">&nbsp;&nbsp;&nbsp;디자인</option>
 									<option value="13">&nbsp;&nbsp;&nbsp;의료</option>
 								 </select>
-							</li>
+							</li> -->
 							<li>
 								<select name="gender" class="require placeholder">
 									<option value="">&nbsp;&nbsp;&nbsp;성별을 선택해주세요.</option>
@@ -72,7 +70,7 @@
 								</select>
 							</li>
 						</ul>
-						<p>
+<!-- 						<p>
 							<input type="checkbox" name="userServiceAgrment" id="userServiceAgrment" value="1">
 							<label for="termsService01">회원 서비스 이용동의</label>
 							<a href="/" class="btn_agree policy" onclick="window.open(this.href, '', ''); return false;">
@@ -85,7 +83,7 @@
 							<a href="/" class="btn_agree policy" onclick="window.open(this.href, '', ''); return false;">
 								(약관보기)
 							</a>
-						</p>
+						</p> -->
 						<div class="id_pw">
 							<dl>
 								<dd>

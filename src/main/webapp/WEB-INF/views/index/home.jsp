@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="false" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>		
 <html>
 <head>
 <title>Home</title>
@@ -10,6 +11,18 @@
 </head>
 <body>
 	<div id="boxWrapp">
+		<sec:authorize access="isAuthenticated()">
+				<input type="hidden" id="isLogined" value ="true"></a>
+		</sec:authorize> 
+		<sec:authorize access="isAnonymous()">
+				<input type="hidden" id="isLogined" value ="false"></a>
+		</sec:authorize> 
+		<script>
+			//로그인된 상태로 home 으로 접근하면 authoredHome으로 강제이동
+			if($("#isLogined").val() == "true"){
+				location.replace("/permit/home?status=index");
+			}
+		</script>
 		<section id="container">
 			<div class ="common_area">
 				<div class="common_wrap">
@@ -19,11 +32,11 @@
 					<div class="id_pw">
 					<dl>
 						<dd>
-							<a class="BtnRed" href="/common/login">로그인</a>	
+							<a class="BtnRed" id="go_login">로그인</a>	
 						</dd>
 				
 						<dd>
-							<a class="BtnGray_Dark" href="/common/regist">회원가입</a>	
+							<a class="BtnGray_Dark" id = "go_regist" >회원가입</a>	
 						</dd> 
 					</dl>
 					</div>	
@@ -34,5 +47,16 @@
 		</section>
 	</div>
 	<script src="/resources/js/includeHTML.js"></script>
+	<script>
+		$(document).on("click", "#go_login", function(){
+			location.replace('/common/login');
+		});
+		
+		$(document).on("click", "#go_regist", function(){
+			alert("test");
+			location.href ='/common/regist';
+		});
+		
+	</script>
 </body>
 </html>

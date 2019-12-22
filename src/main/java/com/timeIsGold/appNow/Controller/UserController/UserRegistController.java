@@ -48,6 +48,17 @@ public class UserRegistController {
 	@RequestMapping(value = "/regist", method = RequestMethod.POST)
 	public @ResponseBody Map<String, Object> registPost(User user) {
 		System.out.println(user.toString());
+		//서비스 전까지 약관동의/ 직업코드 default(1)로 저장
+		if(user.getUserServiceAgrment() == null ) {
+			user.setUserServiceAgrment("1");
+		}
+		if(user.getUserInfoAgrment() == null ) {
+			user.setUserInfoAgrment("1");
+		}
+		if(user.getDetailOccupationCode() == null) {
+			user.setDetailOccupationCode("1");
+		}
+		
 		userService.removeAllUser();
 		//regist User
 		userService.registUser(user);

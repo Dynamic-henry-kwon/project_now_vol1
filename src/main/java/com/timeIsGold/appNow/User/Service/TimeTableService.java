@@ -44,7 +44,7 @@ public class TimeTableService {
 		TimeTable timeTable = null;
 		userSchedule = new UserSchedule();
 			if((timeTable = timeTableDao.readTtable(phoneNum)) != null) {
-				System.out.println(timeTable.toString());
+				System.out.println("timeTable: " + timeTable.toString());
 				userSchedule.setSleepTime(getTime(timeTable.getTimeGoToSleep(), timeTable.getTimeWakeUp()));
 				userSchedule.setAwakeTime(1440 - userSchedule.getSleepTime());
 				userSchedule.setMorningPrepareTime(getTime(timeTable.getTimeWakeUp(), timeTable.getTimeLeaveHome()));
@@ -54,6 +54,8 @@ public class TimeTableService {
 				userSchedule.setAfterNoonWorkTime(getTime(timeTable.getTimeStartAfterNoonWork(), timeTable.getTimeQuttingWork()));
 				userSchedule.setAfterNoonCommuteTime(getTime(timeTable.getTimeQuttingWork(), timeTable.getTimeComeBackHome()));
 				userSchedule.setNightFreeTime(getTime(timeTable.getTimeComeBackHome(), timeTable.getTimeGoToSleep()));
+			} else {
+				userSchedule = null;
 			}
 			return userSchedule;
 	}

@@ -25,6 +25,7 @@
 						<dl>
 							<dt>수면 패턴 등록</dt>
 							<dd>회원님의 수면 패턴을 등록해주세요.</dd>
+							<dd id = "Registelater">나중에하기</dd>
 						</dl>
 						<ul>
 							<li>
@@ -71,6 +72,10 @@
 		});
 	</script>
 	<script type="text/javascript">
+		$(document).on('click', '#Registelater', function(){
+			location.replace("/permit/home?status=index");
+		});
+		
 		var timeTable = new Object();
 		timeTable.timeWakeUp = '';
 		timeTable.timeGoToSleep = '';
