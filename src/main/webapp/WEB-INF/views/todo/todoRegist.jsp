@@ -22,7 +22,7 @@
 		<section id="container">
 			<form id="frm" name="frm" action method="post">
 				<input type="hidden" id="${_csrf.parameterName}" name="${_csrf.token}" value="">
-				<div class="common_area member_form">
+				<div class="common_area regist_form">
 					<div class="common_wrap">
 						<dl>
 							<!-- contoller에서 내려오는 schedule명과 총 할당시간 -->

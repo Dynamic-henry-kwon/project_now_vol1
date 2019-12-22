@@ -179,33 +179,33 @@
     padding-left: 40px;
 }
 
-.member_form ul li {
+.regist_form ul li {
     margin-bottom: 10px;
 }
 
-.member_form ul .password_list span {
+.regist_form ul .password_list span {
     float: left;
     width: 50%;
     height: 52px;
     padding-right: 5px;
 }
 
-.member_form ul li input {
+.regist_form ul li input {
     padding-left: 20px;
     background: #f2f2f2 no-repeat right 0px;
 }
 
-.member_form ul li select {
+.regist_form ul li select {
     padding-left: 20px;
     background: #f2f2f2 no-repeat right 0px;
 }
 
-.member_form ul .password_list span:last-child {
+.regist_form ul .password_list span:last-child {
     padding-left: 5px;
     padding-right: 0;
 }
 
-.member_form ul .password_list:after {
+.regist_form ul .password_list:after {
     clear: both;
     content: '';
     display: block;

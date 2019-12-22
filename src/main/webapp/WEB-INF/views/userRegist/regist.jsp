@@ -17,7 +17,7 @@
 		<div include-html="/common/header"></div>
 		<section id="container">
 			<form id="frm" name="frm" action method="post">
-				<div class="common_area member_form">
+				<div class="common_area regist_form">
 					<div class="common_wrap">
 						<dl>
 							<dt>회원가입</dt>

@@ -16,13 +16,19 @@
 					<P>현재 시간은 ${serverTime}.</P>
 					<p>시간은 금이다. 지금</p>
 					<p>직장인을 위한 시간관리 어플리케이션</p>
+					<div class="id_pw">
+					<dl>
+						<dd>
+							<a class="BtnRed" href="/common/login">로그인</a>	
+						</dd>
+				
+						<dd>
+							<a class="BtnGray_Dark" href="/common/regist">회원가입</a>	
+						</dd> 
+					</dl>
+					</div>	
 				</div>
-				<div class="member_join">
-					<div class="go_join">
-						로그인하세요.
-						<a href="/common/login">로그인</a>	
-					</div>
-				</div>	
+				
 			</div>
 
 		</section>

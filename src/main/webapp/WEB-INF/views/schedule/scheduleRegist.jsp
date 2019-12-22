@@ -20,7 +20,7 @@
 		<div include-html="/common/header"></div>
 		<section id="container">
 			<form id="frm" name="frm" action method="post">
-				<div class="common_area member_form">
+				<div class="common_area regist_form">
 					<div class="common_wrap">
 						<dl>
 							<dt>수면 패턴 등록</dt>
@@ -91,7 +91,7 @@
 				function() {
 					registTimeTableService.setAwakeAndSleep(function(data) {
 						if (data.result) {
-							$('.member_form').html(
+							$('.regist_form').html(
 									registTimeTableService.makeForm(data.title,
 											data.subOne, data.subTwo,
 											data.subThree, data.leftBtnId,
@@ -131,7 +131,7 @@
 							registTimeTableService.setMorningSchedule(function(
 									data) {
 								if (data.result) {
-									$('.member_form').html(
+									$('.regist_form').html(
 											registTimeTableService.makeForm(
 													data.title, data.subOne,
 													data.subTwo, data.subThree,
@@ -173,7 +173,7 @@
 
 					registTimeTableService.setAfternoonSchedule(function(data) {
 						if (data.result) {
-							$('.member_form').html(
+							$('.regist_form').html(
 									registTimeTableService.makeForm(data.title,
 											data.subOne, data.subTwo,
 											data.subThree, data.leftBtnId,
