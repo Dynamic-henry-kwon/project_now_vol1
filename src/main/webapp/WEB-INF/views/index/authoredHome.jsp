@@ -18,7 +18,7 @@
 <body>
 	<div id="boxWrapp">
 		<section id="container">
-			<div class="common_area member_form">
+			<div class="common_area">
 				<div class="common_wrap">
 					<dl>
 						<dt>하루 분석</dt>
@@ -40,6 +40,7 @@
 			</div>
 			<!-- //login_area -->
 		</section>
+		<!-- pop-up -->
 		<div id="boxWapper">
 			<div class="black_bg" style="diplay: block;">
 				<div id="registTodoPop" class="popup"
@@ -64,6 +65,7 @@
 				</div>
 			</div>
 		</div>
+		<!-- pop-up end -->
 	</div>
 	<script src="/resources/js/includeHTML.js"></script>
 	<script src="/resources/js/toDoRegist.js"></script>
