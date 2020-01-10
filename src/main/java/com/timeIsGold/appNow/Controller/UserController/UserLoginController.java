@@ -41,7 +41,6 @@ public class UserLoginController {
 
 	@RequestMapping(value="/common/login", method = RequestMethod.GET)
 	public String getSpringLoginForm(Model model) {
-		System.out.println("here");
 		return "userLogin/securityLogin";
 	}
 	

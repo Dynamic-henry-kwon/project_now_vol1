@@ -4,6 +4,7 @@
 
 
 var registService = (function() {
+	console.log("right now")
 	//회원가입
 	function registUser(data, callback, error){
 		$.ajax({
@@ -34,7 +35,6 @@ var registService = (function() {
 	
 	// 이동 페이지 선택
 	function  selectNextPcsAfterLogin(data, callback, nav, error){
-		console.log(nav);
 		$.ajax({
 			type:'post',
 			url : '/signin_ok',

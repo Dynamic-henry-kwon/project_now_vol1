@@ -47,14 +47,22 @@
 		</section>
 	</div>
 	<script src="/resources/js/includeHTML.js"></script>
+	<script src="/resources/js/now_common.js"></script>
 	<script>
+		function move_page(url, type){
+			if(type == "href"){
+				location.href(url);
+			}else{
+				location.replace(url);
+			}
+		}
+		
 		$(document).on("click", "#go_login", function(){
-			location.replace('/common/login');
+			now_common.move_page("href", "/common/login");
 		});
 		
 		$(document).on("click", "#go_regist", function(){
-			alert("test");
-			location.href ='/common/regist';
+			now_common.move_page("replace", "/common/regist");
 		});
 		
 	</script>

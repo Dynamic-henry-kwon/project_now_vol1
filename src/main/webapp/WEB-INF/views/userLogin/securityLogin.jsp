@@ -68,8 +68,10 @@
 		$(document).ready(function(){
 			//로그인 후  home 화면으로 이동
 			$("#loginBtn").click(function(){
+				//serialize : form data를 쿼리스트링으로
 				var json_param = $('#frm').serialize();
 				console.log(json_param);
+				return false;
 				nav = "/permit/home?status=index";
 				registService.selectNextPcsAfterLogin(json_param, fn_movePage, nav);
 				return false;
